@@ -1,4 +1,4 @@
-# sekolahweb
+# CuhFear School
 
 ## Project setup
 ```
