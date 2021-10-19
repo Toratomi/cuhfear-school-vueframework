@@ -1,4 +1,4 @@
-# CuhFear School
+# CuhFear School Framework
 
 ## Project setup
 ```
