@@ -1,12 +1,22 @@
 <template>
   <v-app-bar
     class="main-header"
-    height="58"
+    height="50"
     fixed
-    color='primary'
-    dark>
-    <v-toolbar-title
-    @click="Home">Lembaga Pendidikan Cuh Fear</v-toolbar-title>
+    color="#6A76AB"
+    dark
+    shrink-on-scroll
+    prominent
+    src="https://picsum.photos/1920/1080?random"
+    fade-img-on-scroll>
+    <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(100,115,201,.7), rgba(25,32,72,.7)"
+        ></v-img>
+      </template>
+    <v-app-bar-title
+    @click="Home">Lembaga Pendidikan Cuh Fear</v-app-bar-title>
     <v-spacer></v-spacer>
     <Search />
     <v-menu
@@ -22,8 +32,7 @@
             v-bind="attrs"
             v-on="on">
             <v-icon
-              style="font-size: 23px"
-              color="sok">mdi-account-circle</v-icon>
+              style="font-size: 23px">mdi-account-circle</v-icon>
             </v-btn>
         </template>
         <v-list>
@@ -49,18 +58,34 @@
               width="80%"
               large
               outlined
-              color="sik"
+              color="primary"
               class="text-capitalize"
               @click="logOut">Sign Out
             </v-btn>
           </div>
         </v-list>
     </v-menu>
+    <template v-slot:extension>
+      <v-tabs
+          v-model="currentItem"
+          fixed-tabs
+          slider-color="white"
+        >
+        <v-tab
+        color="primary"
+        v-for="item in items"
+        :key="item.text"
+        :href="item.href ? item.href : null"
+        :to="item.link === '#' ? null : item.link"
+        link>
+          {{ item.title }}
+        </v-tab>
+      </v-tabs>
+    </template>
   </v-app-bar>
 </template>
 
 <script>
-  import config from '../../config';
   import Search from "@/components/Search/Search";
 
   export default {
@@ -68,8 +93,40 @@
     name: 'Header',
     components: { Search },
     data: () => ({
+      currentItem: 'tab-Web',
+      items: [
+        { title: 'Dashboard', icon: 'mdi-home', link: '/home' },
+          // { title: 'Data Kependudukan dan Sosial', icon: 'mdi-account-multiple', link: '/Datkes' },
+          { title: 'Profil', icon: 'mdi-account-multiple', link: '/about' },
+          // { title: 'Profil Kelurahan', icon: 'fa-institution', link: '/typography' },
+          { title: 'Program Sekolah', icon: 'fa-institution', link: '/home' },
+          // { title: 'Notifications', icon: 'mdi-bell-outline', link: '/notifications' },
+          { title: 'Bidang Keahlian', icon: 'mdi-tooltip-image', link: '/about' },
+          { title: 'GTK dan Siswa', icon: 'mdi-tooltip-image', link: '/home' },
+          { title: 'Sarana Prasarana', icon: 'mdi-tooltip-image', link: '/about' },
+          { title: 'Kegiatan Sekolah', icon: 'mdi-tooltip-image', link: '/home' },
+          { title: 'Berita', icon: 'mdi-tooltip-image', link: '/about' },
+          { title: 'Galeri', icon: 'mdi-tooltip-image', link: '/home' },
+          { title: 'Kontak', icon: 'mdi-tooltip-image', link: '/about' },
+          { title: 'Daftar', icon: 'mdi-tooltip-image', link: '/home' },
+          // {
+          //   title: 'UI Elements',
+          //   icon: 'mdi-image-filter-none',
+          //   link: '/icons',
+          //   model: false,
+          //   children: [
+          //     { title: 'Icons', icon: 'mdi-circle-small', link: '/icons'},
+          //     { title: 'Charts', icon: 'mdi-circle-small', link: '/charts'},
+          //     // { title: 'Maps', icon: 'mdi-circle-small', link: '/maps'},
+          //   ],
+          // },
+      ],
+      more: [
+        'News', 'Maps', 'Books', 'Flights', 'Apps',
+      ],
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+
       // loading: true,
-      config,
       searchCollapse: true,
     }),
     methods: {
@@ -78,6 +135,9 @@
       },
       Home: function () {
         this.$router.push('/home');
+      },
+      About: function () {
+        this.$router.push('/about');
       }
     }
   };
