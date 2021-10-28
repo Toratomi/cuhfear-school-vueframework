@@ -3,6 +3,13 @@ import VueRouter from 'vue-router'
 
 //Kerangka
 import Layout from '../components/LayoutHome/Layout';
+import Beranda from '../views/Beranda/Beranda';
+import Profil from '../views/Profil/Profil';
+import BidangKeahlian from '../views/BidangKeahlian/BidangKeahlian';
+import GTKSiswa from '../views/GTKSiswa/GTKSiswa';
+import KegiatanSekolah from '../views/KegiatanSekolah/KegiatanSekolah';
+import Berita from '../views/Berita/Berita';
+import Kontak from '../views/Kontak/Kontak';
 
 //Halaman
 import Home from '../views/Home.vue'
@@ -14,12 +21,47 @@ const routes = [
     path: '/',
     name: 'Layout',
     component: Layout,
-    redirect: 'home',
+    redirect: 'beranda',
     children: [
       {
         path: 'home',
         name: 'Home',
         component: Home
+      },
+      {
+        path: 'beranda',
+        name: 'Beranda',
+        component: Beranda
+      },
+      {
+        path: 'profil',
+        name: 'Profil',
+        component: Profil
+      },
+      {
+        path: 'bidangkeahlian',
+        name: 'Bidangkeahlian',
+        component: BidangKeahlian
+      },
+      {
+        path: 'gtksiswa',
+        name: 'GTKSiswa',
+        component: GTKSiswa
+      },
+      {
+        path: 'kegiatansekolah',
+        name: 'KegiatanSekolah',
+        component: KegiatanSekolah
+      },
+      {
+        path: 'berita',
+        name: 'Berita',
+        component: Berita
+      },
+      {
+        path: 'kontak',
+        name: 'Kontak',
+        component: Kontak
       },
       {
         path: '/about',

@@ -1,7 +1,6 @@
 <template>
   <v-app-bar
     class="main-header"
-    height="50"
     fixed
     color="#6A76AB"
     dark
@@ -39,7 +38,7 @@
           <!-- <div class="text-h5 grey--text text--darken-3 px-4 pt-4">Nama User</div> -->
           <div class="text-h8 grey--text text--darken-3 px-4 pt-4">Login Sebagai: Admin</div>
           <v-list-item-group color="primary">
-            <v-list-item
+            <!-- <v-list-item
               v-for="(item, i) in account"
               :key="i">
                 <v-list-item-icon class="mr-4">
@@ -51,7 +50,7 @@
                 <v-list-item-content>
                   <v-list-item-title :color='config.light.textColor' v-text="item.text"></v-list-item-title>
                 </v-list-item-content>
-            </v-list-item>
+            </v-list-item> -->
           </v-list-item-group>
           <div class="d-flex justify-center my-3">
             <v-btn
@@ -95,20 +94,20 @@
     data: () => ({
       currentItem: 'tab-Web',
       items: [
-        { title: 'Dashboard', icon: 'mdi-home', link: '/home' },
+        { title: 'Beranda', icon: 'mdi-home', link: '/beranda' },
           // { title: 'Data Kependudukan dan Sosial', icon: 'mdi-account-multiple', link: '/Datkes' },
-          { title: 'Profil', icon: 'mdi-account-multiple', link: '/about' },
+          { title: 'Profil', icon: 'mdi-account-multiple', link: '/profil' },
           // { title: 'Profil Kelurahan', icon: 'fa-institution', link: '/typography' },
           { title: 'Program Sekolah', icon: 'fa-institution', link: '/home' },
           // { title: 'Notifications', icon: 'mdi-bell-outline', link: '/notifications' },
-          { title: 'Bidang Keahlian', icon: 'mdi-tooltip-image', link: '/about' },
-          { title: 'GTK dan Siswa', icon: 'mdi-tooltip-image', link: '/home' },
+          { title: 'Bidang Keahlian', icon: 'mdi-tooltip-image', link: '/bidangkeahlian' },
+          { title: 'GTK dan Siswa', icon: 'mdi-tooltip-image', link: '/gtksiswa' },
           { title: 'Sarana Prasarana', icon: 'mdi-tooltip-image', link: '/about' },
-          { title: 'Kegiatan Sekolah', icon: 'mdi-tooltip-image', link: '/home' },
-          { title: 'Berita', icon: 'mdi-tooltip-image', link: '/about' },
-          { title: 'Galeri', icon: 'mdi-tooltip-image', link: '/home' },
-          { title: 'Kontak', icon: 'mdi-tooltip-image', link: '/about' },
-          { title: 'Daftar', icon: 'mdi-tooltip-image', link: '/home' },
+          { title: 'Kegiatan Sekolah', icon: 'mdi-tooltip-image', link: '/kegiatansekolah' },
+          { title: 'Berita', icon: 'mdi-tooltip-image', link: '/berita' },
+          // { title: 'Galeri', icon: 'mdi-tooltip-image', link: '/home' },
+          { title: 'Kontak', icon: 'mdi-tooltip-image', link: '/kontak' },
+          // { title: 'Daftar', icon: 'mdi-tooltip-image', link: '/home' },
           // {
           //   title: 'UI Elements',
           //   icon: 'mdi-image-filter-none',
