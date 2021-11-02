@@ -106,7 +106,7 @@
           { title: 'Kegiatan Sekolah', icon: 'mdi-tooltip-image', link: '/kegiatansekolah' },
           { title: 'Berita', icon: 'mdi-tooltip-image', link: '/berita' },
           // { title: 'Galeri', icon: 'mdi-tooltip-image', link: '/home' },
-          { title: 'Kontak', icon: 'mdi-tooltip-image', link: '/kontak' },
+          { title: 'Daftar', icon: 'mdi-tooltip-image', link: '/kontak' },
           // { title: 'Daftar', icon: 'mdi-tooltip-image', link: '/home' },
           // {
           //   title: 'UI Elements',
@@ -130,7 +130,7 @@
     }),
     methods: {
       logOut: function () {
-        this.$router.push('/about');
+        this.$router.push('/home');
       },
       Home: function () {
         this.$router.push('/home');

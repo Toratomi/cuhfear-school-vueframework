@@ -10,6 +10,7 @@ import GTKSiswa from '../views/GTKSiswa/GTKSiswa';
 import KegiatanSekolah from '../views/KegiatanSekolah/KegiatanSekolah';
 import Berita from '../views/Berita/Berita';
 import Kontak from '../views/Kontak/Kontak';
+// import Login from '../views/Login/Login'
 
 //Halaman
 import Home from '../views/Home.vue'
@@ -18,16 +19,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/home',
+    name: 'Home',
+    component: Home
+  },
+  {
     path: '/',
     name: 'Layout',
     component: Layout,
     redirect: 'beranda',
     children: [
-      {
-        path: 'home',
-        name: 'Home',
-        component: Home
-      },
       {
         path: 'beranda',
         name: 'Beranda',
